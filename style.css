@@ -1,0 +1,119 @@
+@font-face {
+    font-family: "Antonio-Regular.ttf";
+    src: url(./fonts/Antonio-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Inconsolata_Condensed-Bold.ttf";
+    src: url(./fonts/Inconsolata_Condensed-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Inconsolata_Condensed-Regular.ttf";
+    src: url(./fonts/Inconsolata_Condensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Inconsolata_Condensed-SemiBold.ttf";
+    src: url(./fonts/Inconsolata_Condensed-SemiBold.ttf);
+}
+
+:root {
+    /* colors */
+    --background-color: #101010;
+    --secondary-color: #CCC9BB;
+    --primary-gradient: linear-gradient(90deg, #131313, var(--background-color));
+    --secondary-transparent-60: rgba(204, 201, 187, 0.6);
+    /* spacing */
+    --spacing-1x: 0.25rem;
+    --spacing-2x: 0.5rem;
+    --spacing-4x: 1rem;
+    --spacing-5x: 1.25rem;
+    --spacing-6x: 1.5rem;
+    --spacing-8x: 2rem;
+    --spacing-10x: 2.25rem;
+    --spacing-12x: 3rem;
+    --spacing-14x: 4rem;
+    /* border-radius */
+    --border-radius-sm: 6px;
+    /* typography */
+    --font-size-heading-lg: 2rem;
+    --font-size-heading-md: 1.75rem;
+    --font-size-paragraph: 1rem;
+    --font-size-button: 1.25rem;
+    --font-size-accent: 11.25rem;
+    --font-family-heading: "Antonio-Regular.ttf";
+    --font-family-paragraph: "Inconsolata_Condensed-Regular.ttf";
+    --font-family-button: "Inconsolata_Condensed-Semibold.ttf";
+}
+
+/* * {
+    margin-block: 0px;
+} */
+
+body {
+    background-color: var(--background-color);
+    margin: var(--spacing-10x);
+    padding: 0;
+}
+
+.box {
+    background: var(--primary-gradient);
+    height: 300px;
+    width: 300px;
+}
+
+.heading-lg {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-lg);
+    color: var(--secondary-color);
+}
+
+.heading-md {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-md);
+    color: var(--secondary-color);
+}
+
+.paragraph {
+    font-family: var(--font-family-paragraph);
+    font-size: var(--font-size-paragraph);
+    color: var(--secondary-color);
+}
+
+.primary-button {
+    border: 1px solid var(--secondary-color);
+    font-family: var(--font-family-button);
+    font-size: var(--font-size-button);
+    color: var(--secondary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: var(--spacing-2x) var(--spacing-4x);
+    border-radius: var(--border-radius-sm);
+}
+
+.secondary-button {
+    font-family: var(--font-family-button);
+    font-size: var(--font-size-paragraph);
+    text-decoration: none;
+    padding: var(--spacing-2x) var(--spacing-4x);
+    color: var(--secondary-transparent-60);
+}
+
+.accent-text {
+    font-size: var(--font-size-accent);
+    font-family: var(--font-family-heading);
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    margin-block: 0px;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 100%));
+    gap: var(--spacing-1x);
+}
+
+.transparent {
+    opacity: 0.6;
+}
