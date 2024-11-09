@@ -22,7 +22,7 @@
     /* colors */
     --background-color: #101010;
     --secondary-color: #CCC9BB;
-    --primary-gradient: linear-gradient(90deg, #131313, var(--background-color));
+    --primary-gradient: linear-gradient(90deg, hsl(0, 0%, 9%), var(--background-color));
     --secondary-transparent-60: rgba(204, 201, 187, 0.6);
     /* spacing */
     --spacing-1x: 0.25rem;
