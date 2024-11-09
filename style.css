@@ -24,6 +24,8 @@
     --secondary-color: #CCC9BB;
     --primary-gradient: linear-gradient(90deg, hsl(0, 0%, 9%), var(--background-color));
     --secondary-transparent-60: rgba(204, 201, 187, 0.6);
+    --secondary-transparent-30:  rgba(204, 201, 187, 0.3);
+    --secondary-transparent-0:  rgba(204, 201, 187, 0.01);
     /* spacing */
     --spacing-1x: 0.25rem;
     --spacing-2x: 0.5rem;
@@ -91,6 +93,17 @@ body {
     padding: var(--spacing-2x) var(--spacing-4x);
     border-radius: var(--border-radius-sm);
     width: fit-content;
+}
+
+.primaryButton:hover {
+    background-color: var(--secondary-transparent-30);
+    border: 1px solid var(--secondary-transparent-0);
+}
+
+.primaryButton::selection {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    color: var(--background-color);
 }
 
 .secondaryButton {
