@@ -47,9 +47,9 @@
     --font-family-button: "Inconsolata_Condensed-Semibold.ttf";
 }
 
-/* * {
+* {
     margin-block: 0px;
-} */
+}
 
 body {
     background-color: var(--background-color);
@@ -90,6 +90,7 @@ body {
     text-transform: uppercase;
     padding: var(--spacing-2x) var(--spacing-4x);
     border-radius: var(--border-radius-sm);
+    width: fit-content;
 }
 
 .secondaryButton {
@@ -116,4 +117,31 @@ body {
 
 .transparent {
     opacity: 0.6;
+}
+
+.navButtons {
+    display: flex;
+    flex-direction: column;
+    gap:
+    var(--spacing-4x);
+    width: fit-content;
+}
+
+button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navBar {
+    display: grid;
+    grid-template-columns: 6fr 3fr 2fr 1fr;
+    z-index: 1;
+}
+
+.modeSwitcher {
+    justify-self: end; 
+    align-self: start;
 }
