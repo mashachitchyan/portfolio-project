@@ -81,7 +81,7 @@ body {
     color: var(--secondary-color);
 }
 
-.primary-button {
+.primaryButton {
     border: 1px solid var(--secondary-color);
     font-family: var(--font-family-button);
     font-size: var(--font-size-button);
@@ -92,7 +92,7 @@ body {
     border-radius: var(--border-radius-sm);
 }
 
-.secondary-button {
+.secondaryButton {
     font-family: var(--font-family-button);
     font-size: var(--font-size-paragraph);
     text-decoration: none;
@@ -100,7 +100,7 @@ body {
     color: var(--secondary-transparent-60);
 }
 
-.accent-text {
+.accentText {
     font-size: var(--font-size-accent);
     font-family: var(--font-family-heading);
     color: var(--secondary-color);
@@ -108,7 +108,7 @@ body {
     margin-block: 0px;
 }
 
-.box-container {
+.boxContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 100%));
     gap: var(--spacing-1x);
