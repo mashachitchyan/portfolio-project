@@ -47,6 +47,8 @@
     --font-family-heading: "Antonio-Regular.ttf";
     --font-family-paragraph: "Inconsolata_Condensed-Regular.ttf";
     --font-family-button: "Inconsolata_Condensed-Semibold.ttf";
+    /* transitions */
+    --transition-duration: 0.3s;
 }
 
 * {
@@ -93,6 +95,7 @@ body {
     padding: var(--spacing-2x) var(--spacing-4x);
     border-radius: var(--border-radius-sm);
     width: fit-content;
+    transition: var(--transition-duration);
 }
 
 .primaryButton:hover {
@@ -102,6 +105,12 @@ body {
 
 .navItem.past {
     background-color: var(--secondary-transparent-60);
+    border: 1px solid var(--secondary-transparent-0);
+    transition: var(--transition-duration);
+}
+
+.navItem.past:hover {
+    background-color: var(--secondary-transparent-30);
     border: 1px solid var(--secondary-transparent-0);
 }
 
