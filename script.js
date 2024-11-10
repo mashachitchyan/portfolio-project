@@ -1,3 +1,5 @@
+//Grid transition
+
 document.addEventListener('DOMContentLoaded', () => {
     const content = document.querySelector('.content');
     const homeButton = document.getElementById('homeButton');
@@ -30,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 });
 
+
+// Nav bar button transform
 
 document.addEventListener("DOMContentLoaded", function () {
     const navItems = document.querySelectorAll(".navItem");
@@ -71,6 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
 const currentDate = new Date();
 console.log(currentDate);
 
+
+// Date and time
+
 document.addEventListener("DOMContentLoaded", function () {
     function updateDateTime() {
         const options = {
@@ -94,5 +101,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(updateDateTime, 1000);
 });
+
+
+// Mode switcher animation on click
+
+document.addEventListener("DOMContentLoaded", function() {
+    const modeSwitcher = document.getElementById("modeSwitcher");
+
+    modeSwitcher.addEventListener("click", function() {
+        modeSwitcher.classList.toggle("rotated");
+    });
+});
+
 
 

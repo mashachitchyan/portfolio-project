@@ -190,6 +190,7 @@ button {
     border: none;
     margin: 0;
     padding: 0;
+    height: 32px;
 }
 
 .navBar {
@@ -198,11 +199,16 @@ button {
     z-index: 1;
 }
 
-.modeSwitcher {
+#modeSwitcher {
     justify-self: end; 
     align-self: start;
+    padding: 0;
+    margin: 0;
+    transition: var(--transition-duration);
 }
 
-
+#modeSwitcher.rotated {
+    rotate: 180deg;
+}
 
 
