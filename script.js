@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.add('four-columns');
     });
 
-    contactsButton.addEventListener ('click', () => {
+    contactsButton.addEventListener('click', () => {
         content.classList.remove('three-columns');
         content.classList.remove('four-columns');
         content.classList.add('two-columns');
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const visitedPages = JSON.parse(localStorage.getItem("visitedPages")) || [];
     const currentPage = window.location.pathname.split("/").pop();
 
-    console.log("Current Page:", currentPage); 
+    console.log("Current Page:", currentPage);
 
     if (!visitedPages.includes(currentPage)) {
         visitedPages.push(currentPage);
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navItems.forEach((item) => {
         const pagePath = item.getAttribute("href").split("/").pop();
 
-        console.log("Nav Item Path:", pagePath); 
+        console.log("Nav Item Path:", pagePath);
 
         const currentPageIndex = pageOrder.indexOf(currentPage);
         const pageIndex = pageOrder.indexOf(pagePath);
@@ -68,4 +68,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-    
+const currentDate = new Date();
+console.log(currentDate);
+
+document.addEventListener("DOMContentLoaded", function () {
+    function updateDateTime() {
+        const options = {
+            timeZone: "America/Toronto",
+            weekday: "long",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "2-digit",
+            hour12: true
+        };
+
+        let dateTime = new Date().toLocaleString("en-CA", options);
+
+        dateTime = dateTime.replace("a.m.", "AM").replace("p.m.", "PM").replace("Sunday", "Sun").replace("Monday", "Mon").replace("Tuesday", "Tue").replace("Wednesday", "Wed").replace("Thursday", "Thu").replace("Friday", "Fri").replace("Saturday", "Sat");
+
+        document.getElementById("dateTime").textContent = dateTime;
+    }
+
+    updateDateTime();
+
+    setInterval(updateDateTime, 1000);
+});
+
+
