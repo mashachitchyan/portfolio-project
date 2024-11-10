@@ -29,3 +29,43 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.add('two-columns');
     })
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const navItems = document.querySelectorAll(".navItem");
+
+    const pageOrder = ['index.html', 'projects.html', 'resume.html', 'contacts.html'];
+    const visitedPages = JSON.parse(localStorage.getItem("visitedPages")) || [];
+    const currentPage = window.location.pathname.split("/").pop();
+
+    console.log("Current Page:", currentPage); 
+
+    if (!visitedPages.includes(currentPage)) {
+        visitedPages.push(currentPage);
+        localStorage.setItem("visitedPages", JSON.stringify(visitedPages));
+    }
+
+    console.log("Visited Pages:", visitedPages);
+
+    navItems.forEach((item) => {
+        const pagePath = item.getAttribute("href").split("/").pop();
+
+        console.log("Nav Item Path:", pagePath); 
+
+        const currentPageIndex = pageOrder.indexOf(currentPage);
+        const pageIndex = pageOrder.indexOf(pagePath);
+
+        if (pageIndex === currentPageIndex) {
+            console.log(`Setting "${pagePath}" as selected`);
+            item.classList.add("selected");
+        } else if (pageIndex < currentPageIndex) {
+            console.log(`Setting "${pagePath}" as past`);
+            item.classList.add("past");
+        } else {
+            console.log(`Setting "${pagePath}" as future`);
+            item.classList.add("navItem");
+        }
+    });
+});
+
+    
