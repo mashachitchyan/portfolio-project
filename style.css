@@ -237,6 +237,8 @@ button {
     background-position: 0%;
     transition: background-position 0.5s ease;
     background: var(--primary-gradient);
+    display: grid;
+    grid-template-rows: 0.8fr 1.1fr 1.1fr;
 }
 
 #noGradient {
@@ -270,3 +272,12 @@ button {
 .four-columns .column {
     background-position: 0%;
 }
+
+.item-1 {
+    grid-row: 2;
+}
+
+.item-2 {
+    grid-row: 3;
+}
+
