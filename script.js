@@ -33,47 +33,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Nav bar button transform
+// Nav bar button states
 
-document.addEventListener("DOMContentLoaded", function () {
-    const navItems = document.querySelectorAll(".navItem");
+document.addEventListener('DOMContentLoaded', function () {
+    const navItems = document.querySelectorAll('.navItem');
+    
+    navItems[0].classList.add('selected'); 
+    
+    navItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            navItems.forEach(btn => {
+                btn.classList.remove('selected', 'past');
+            });
 
-    const pageOrder = ['index.html', 'projects.html', 'resume.html', 'contacts.html'];
-    const visitedPages = JSON.parse(localStorage.getItem("visitedPages")) || [];
-    const currentPage = window.location.pathname.split("/").pop();
+            item.classList.add('selected');
 
-    console.log("Current Page:", currentPage);
+            for (let i = 0; i < index; i++) {
+                navItems[i].classList.add('past');
+            }
 
-    if (!visitedPages.includes(currentPage)) {
-        visitedPages.push(currentPage);
-        localStorage.setItem("visitedPages", JSON.stringify(visitedPages));
-    }
-
-    console.log("Visited Pages:", visitedPages);
-
-    navItems.forEach((item) => {
-        const pagePath = item.getAttribute("href").split("/").pop();
-
-        console.log("Nav Item Path:", pagePath);
-
-        const currentPageIndex = pageOrder.indexOf(currentPage);
-        const pageIndex = pageOrder.indexOf(pagePath);
-
-        if (pageIndex === currentPageIndex) {
-            console.log(`Setting "${pagePath}" as selected`);
-            item.classList.add("selected");
-        } else if (pageIndex < currentPageIndex) {
-            console.log(`Setting "${pagePath}" as past`);
-            item.classList.add("past");
-        } else {
-            console.log(`Setting "${pagePath}" as future`);
-            item.classList.add("navItem");
-        }
+            for (let i = index + 1; i < navItems.length; i++) {
+                navItems[i].classList.remove('past');
+            }
+        });
     });
 });
-
-const currentDate = new Date();
-console.log(currentDate);
 
 
 // Date and time
