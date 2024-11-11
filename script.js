@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     navItems[0].classList.add('selected');
 
-
+    
     navItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             navItems.forEach(btn => {
