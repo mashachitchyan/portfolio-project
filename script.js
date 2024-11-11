@@ -1,4 +1,3 @@
-//Grid transition
 
 document.addEventListener('DOMContentLoaded', () => {
     const content = document.querySelector('.content');
@@ -6,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectsButton = document.getElementById('projectsButton');
     const resumeButton = document.getElementById('resumeButton');
     const contactsButton = document.getElementById('contactsButton');
+    const item1 = document.querySelector('.item-1');
+    const item2 = document.querySelector('.item-2');
+
+    item1.classList.add('visible');
+    item1.classList.remove('hidden');
 
     homeButton.addEventListener('click', () => {
         content.classList.remove('four-columns');
@@ -39,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.add('two-columns');
     })
 });
+
+
+
 
 
 // Nav bar button states
@@ -105,9 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
         modeSwitcher.classList.toggle("rotated");
     });
 });
-
-const item1 = document.querySelector('.item-1');
-const item2 = document.querySelector('.item-2');
 
 
 

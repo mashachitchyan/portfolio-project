@@ -50,6 +50,9 @@
     --font-family-button: "Inconsolata_Condensed-Semibold.ttf";
     /* transitions */
     --transition-duration: 0.3s;
+    --transition-delay: 500ms;
+
+    /* define light mode variables here and then use classes to apply them with javascript */
 }
 
 * {
@@ -291,7 +294,7 @@ button {
     position: relative;
     left: 1px;
     transition: var(--transition-duration);
-    transition-delay: 500ms;
+    transition-delay: var(--transition-delay);
 }
 
 .hidden {
