@@ -11,12 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.remove('four-columns');
         content.classList.remove('two-columns');
         content.classList.add('three-columns');
+        item1.classList.add('visible');
+        item1.classList.remove('hidden');
+        item2.classList.add('hidden');
+        item2.classList.remove('visible');
     });
 
     projectsButton.addEventListener('click', () => {
         content.classList.remove('four-columns');
         content.classList.remove('three-columns');
         content.classList.add('two-columns');
+        item1.classList.add('hidden');
+        item1.classList.remove('visible');
+        item2.classList.add('visible');
+        item2.classList.remove('hidden');
     });
 
     resumeButton.addEventListener('click', () => {
@@ -37,9 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', function () {
     const navItems = document.querySelectorAll('.navItem');
-    
-    navItems[0].classList.add('selected'); 
-    
+
+    navItems[0].classList.add('selected');
+
+
     navItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             navItems.forEach(btn => {
@@ -89,13 +98,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Mode switcher animation on click
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const modeSwitcher = document.getElementById("modeSwitcher");
 
-    modeSwitcher.addEventListener("click", function() {
+    modeSwitcher.addEventListener("click", function () {
         modeSwitcher.classList.toggle("rotated");
     });
 });
+
+const item1 = document.querySelector('.item-1');
+const item2 = document.querySelector('.item-2');
 
 
 
