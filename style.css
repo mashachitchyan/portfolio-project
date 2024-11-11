@@ -29,6 +29,7 @@
     /* spacing */
     --spacing-1x: 0.25rem;
     --spacing-2x: 0.5rem;
+    --spacing-3x: 0.75rem;
     --spacing-4x: 1rem;
     --spacing-5x: 1.25rem;
     --spacing-6x: 1.5rem;
@@ -42,7 +43,7 @@
     --font-size-heading-lg: 2rem;
     --font-size-heading-md: 1.75rem;
     --font-size-paragraph: 1rem;
-    --font-size-button: 1.25rem;
+    --font-size-button: 1.15rem;
     --font-size-accent: 11.25rem;
     --font-family-heading: "Antonio-Regular.ttf";
     --font-family-paragraph: "Inconsolata_Condensed-Regular.ttf";
@@ -57,8 +58,11 @@
 
 body {
     background-color: var(--background-color);
-    margin: var(--spacing-10x);
+    margin: 0;
     padding: 0;
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
 }
 
 .box {
@@ -107,11 +111,13 @@ body {
     background-color: var(--secondary-transparent-60);
     border: 1px solid var(--secondary-transparent-0);
     transition: var(--transition-duration);
+    color: var(--background-color);
 }
 
 .navItem.past:hover {
     background-color: var(--secondary-transparent-30);
     border: 1px solid var(--secondary-transparent-0);
+    color: var(--secondary-color);
 }
 
 .navItem.selected {
@@ -179,8 +185,7 @@ body {
 .navButtons {
     display: flex;
     flex-direction: column;
-    gap:
-    var(--spacing-4x);
+    gap: var(--spacing-3x);
     width: fit-content;
 }
 
@@ -194,9 +199,14 @@ button {
 }
 
 .navBar {
+    grid-row: 1;
     display: grid;
     grid-template-columns: 6fr 3fr 2fr 1fr;
-    z-index: 1;
+    z-index: 2;
+    position: fixed;
+    padding: var(--spacing-8x) var(--spacing-8x) 0 var(--spacing-8x);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #modeSwitcher {
@@ -211,4 +221,52 @@ button {
     rotate: 180deg;
 }
 
+.content {
+    grid-row: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    transition: grid-template-columns 0.5s ease;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+}
 
+.content .column {
+    background-size: 200% 100%;
+    background-position: 0%;
+    transition: background-position 0.5s ease;
+    background: var(--primary-gradient);
+}
+
+#noGradient {
+    background: var(--background-color)
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    width: 100%;
+}
+
+.three-columns {
+    grid-template-columns: 1.5fr 4.5fr 6fr 0fr;
+}
+
+.four-columns {
+    grid-template-columns: 1.5fr 4.5fr 2.85fr 3.15fr;
+}
+
+.two-columns {
+    grid-template-columns: 3.5fr 8.5fr 0fr 0fr;
+}
+
+.three-columns .column {
+    background-position: 100%;
+}
+
+.four-columns .column {
+    background-position: 0%;
+}
