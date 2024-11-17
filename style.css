@@ -44,13 +44,14 @@
     --font-size-heading-md: 1.75rem;
     --font-size-paragraph: 1rem;
     --font-size-button: 1.15rem;
-    --font-size-accent: 11.25rem;
+    --font-size-accent: 10rem;
     --font-family-heading: "Antonio-Regular.ttf";
     --font-family-paragraph: "Inconsolata_Condensed-Regular.ttf";
     --font-family-button: "Inconsolata_Condensed-Semibold.ttf";
     /* transitions */
-    --transition-duration: 0.3s;
-    --transition-delay: 500ms;
+    --transition-duration: 0.4s;
+    --transition-function: ease-out;
+    --transition-delay: 400ms;
 
     /* define light mode variables here and then use classes to apply them with javascript */
 }
@@ -142,6 +143,7 @@ body {
     height: fit-content;
     align-content: baseline;
     position: relative;
+    text-decoration: none;
 }
 
 .ghostButton::after {
@@ -155,7 +157,22 @@ body {
     transition: width var(--transition-duration) ease;
 }
 
+#email::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--secondary-color);
+    transition: width var(--transition-duration) ease;
+}
+
 .ghostButton:hover::after {
+    width: 100%;
+}
+
+#email:hover::after {
     width: 100%;
 }
 
@@ -173,6 +190,7 @@ body {
     color: var(--secondary-color);
     text-transform: uppercase;
     margin-block: 0px;
+    /* line-height: var(--spacing-8x); */
 }
 
 .boxContainer {
@@ -228,7 +246,7 @@ button {
     grid-row: 1 / -1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    transition: grid-template-columns 0.5s ease;
+    transition: grid-template-columns var(--transition-duration) var(--transition-function);
     height: 100vh;
     width: 100%;
     z-index: 1;
@@ -238,7 +256,7 @@ button {
 .content .column {
     background-size: 200% 100%;
     background-position: 0%;
-    transition: background-position 0.5s ease;
+    transition: background-position var(--transition-duration) var(--transition-function);
     background: var(--primary-gradient);
     display: grid;
     grid-template-rows: 0.8fr 1.1fr 1.1fr;
@@ -278,16 +296,23 @@ button {
     background-position: 0%;
 }
 
-.item-1 {
+#item1 {
     grid-row: 2;
     grid-column: 1;
     z-index: 1;
 }
 
-.item-2 {
+#item2 {
     grid-row: 2;
     grid-column: 1;
     z-index: 2;
+}
+
+#accentText {
+    grid-row: 2;
+    grid-column: 1;
+    z-index: 3;
+    align-content: end;
 }
 
 .visible {
@@ -295,10 +320,57 @@ button {
     left: 1px;
     transition: var(--transition-duration);
     transition-delay: var(--transition-delay);
+    transition-timing-function: var(--transition-function);
 }
 
 .hidden {
     position: relative;
-    left: -100px;
+    left: -1000px;
     transition: var(--transition-duration);
+    transition-timing-function: var(--transition-function);
+}
+
+.visibleTop {
+    position: relative;
+    top: 1px;
+    transition: var(--transition-duration);
+    transition-delay: calc(var(--transition-delay)*2);
+    transition-timing-function: var(--transition-function);
+}
+
+.visibleTopLate {
+    position: relative;
+    top: 1px;
+    transition: var(--transition-duration);
+    transition-delay: calc(var(--transition-delay)*2.3);
+    transition-timing-function: var(--transition-function);
+}
+
+.hiddenTop {
+    position: relative;
+    top: -300px;
+    transition: var(--transition-duration);
+    transition-timing-function: var(--transition-function);
+}
+
+#contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row: 3;
+    overflow: hidden;
+    padding-top: var(--spacing-4x);
+}
+
+#contactLinks {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3x);
+}
+
+#contactInfo {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3x);
 }

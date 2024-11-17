@@ -1,3 +1,4 @@
+// Grid and contents sliding 
 
 document.addEventListener('DOMContentLoaded', () => {
     const content = document.querySelector('.content');
@@ -7,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactsButton = document.getElementById('contactsButton');
     const item1 = document.querySelector('.item-1');
     const item2 = document.querySelector('.item-2');
+    const accentText = document.getElementById('accentText');
+    const contactLinks = document.getElementById ('contactLinks');
+    const contactInfo = document.getElementById('contactInfo');
 
     item1.classList.add('visible');
     item1.classList.remove('hidden');
@@ -19,6 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
         item1.classList.remove('hidden');
         item2.classList.add('hidden');
         item2.classList.remove('visible');
+        accentText.classList.add('hidden');
+        accentText.classList.remove('visible');
+        contactLinks.classList.add('hiddenTop');
+        contactLinks.classList.remove('visibleTop');
+        contactInfo.classList.add('hiddenTop');
+        contactInfo.classList.remove('visibleTopLate');
     });
 
     projectsButton.addEventListener('click', () => {
@@ -29,23 +39,46 @@ document.addEventListener('DOMContentLoaded', () => {
         item1.classList.remove('visible');
         item2.classList.add('visible');
         item2.classList.remove('hidden');
+        accentText.classList.add('hidden');
+        accentText.classList.remove('visible');
+        contactLinks.classList.add('hiddenTop');
+        contactLinks.classList.remove('visibleTop');
+        contactInfo.classList.add('hiddenTop');
+        contactInfo.classList.remove('visibleTopLate');
     });
 
     resumeButton.addEventListener('click', () => {
         content.classList.remove('two-columns');
         content.classList.remove('three-columns');
         content.classList.add('four-columns');
+        item1.classList.add('hidden');
+        item1.classList.remove('visible');
+        item2.classList.add('hidden');
+        item2.classList.remove('visible');
+        accentText.classList.add('hidden');
+        accentText.classList.remove('visible');
+        contactLinks.classList.add('hiddenTop');
+        contactLinks.classList.remove('visibleTop');
+        contactInfo.classList.add('hiddenTop');
+        contactInfo.classList.remove('visibleTopLate');
     });
 
     contactsButton.addEventListener('click', () => {
         content.classList.remove('three-columns');
         content.classList.remove('four-columns');
         content.classList.add('two-columns');
+        item1.classList.add('hidden');
+        item1.classList.remove('visible');
+        item2.classList.add('hidden');
+        item2.classList.remove('visible');
+        accentText.classList.add('visible');
+        accentText.classList.remove('hidden');
+        contactLinks.classList.add('visibleTop');
+        contactLinks.classList.remove('hiddenTop');
+        contactInfo.classList.add('visibleTopLate');
+        contactInfo.classList.remove('hiddenTop');
     })
 });
-
-
-
 
 
 // Nav bar button states
