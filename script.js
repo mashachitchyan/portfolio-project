@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectsButton = document.getElementById('projectsButton');
     const resumeButton = document.getElementById('resumeButton');
     const contactsButton = document.getElementById('contactsButton');
-    const item1 = document.querySelector('.item-1');
+    const summary = document.querySelector('.summary');
     const item2 = document.querySelector('.item-2');
     const accentText = document.getElementById('accentText');
     const contactLinks = document.getElementById('contactLinks');
@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const experience = document.getElementById('experience');
     const education = document.getElementById('education');
 
-    item1.classList.add('visible');
-    item1.classList.remove('hidden');
+    summary.classList.add('visible');
+    summary.classList.remove('hidden');
     item2.classList.add('hidden');
     item2.classList.remove('visible');
     accentText.classList.add('hidden');
@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.remove('four-columns');
         content.classList.remove('two-columns');
         content.classList.add('three-columns');
-        item1.classList.add('visible');
-        item1.classList.remove('hidden');
+        summary.classList.add('visible');
+        summary.classList.remove('hidden');
         item2.classList.add('hidden');
         item2.classList.remove('visible');
         accentText.classList.add('hidden');
@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.remove('four-columns');
         content.classList.remove('three-columns');
         content.classList.add('two-columns');
-        item1.classList.add('hidden');
-        item1.classList.remove('visible');
+        summary.classList.add('hidden');
+        summary.classList.remove('visible');
         item2.classList.add('visible');
         item2.classList.remove('hidden');
         accentText.classList.add('hidden');
@@ -82,8 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.remove('two-columns');
         content.classList.remove('three-columns');
         content.classList.add('four-columns');
-        item1.classList.add('hidden');
-        item1.classList.remove('visible');
+        summary.classList.add('hidden');
+        summary.classList.remove('visible');
         item2.classList.add('hidden');
         item2.classList.remove('visible');
         accentText.classList.add('hidden');
@@ -104,8 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.remove('three-columns');
         content.classList.remove('four-columns');
         content.classList.add('two-columns');
-        item1.classList.add('hidden');
-        item1.classList.remove('visible');
+        summary.classList.add('hidden');
+        summary.classList.remove('visible');
         item2.classList.add('hidden');
         item2.classList.remove('visible');
         accentText.classList.add('visible');
