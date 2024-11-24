@@ -43,11 +43,13 @@
     --font-size-heading-lg: 2rem;
     --font-size-heading-md: 1.75rem;
     --font-size-paragraph: 1rem;
+    --font-size-paragraph-lg: 1.25rem;
     --font-size-button: 1.15rem;
     --font-size-accent: 10rem;
     --font-family-heading: "Antonio-Regular.ttf";
     --font-family-paragraph: "Inconsolata_Condensed-Regular.ttf";
     --font-family-button: "Inconsolata_Condensed-Semibold.ttf";
+    --font-family-paragraph-bold: "Inconsolata_Condensed-Bold.ttf";
     /* transitions */
     --transition-duration: 0.4s;
     --transition-function: ease-out;
@@ -90,6 +92,24 @@ body {
 .paragraph {
     font-family: var(--font-family-paragraph);
     font-size: var(--font-size-paragraph);
+    color: var(--secondary-color);
+}
+
+.paragraphLarge {
+    font-family: var(--font-family-paragraph);
+    font-size: var(--font-size-paragraph-lg);
+    color: var(--secondary-color);
+}
+
+.paragraphBold {
+    font-family: var(--font-family-paragraph-bold);
+    font-size: var(--font-size-paragraph);
+    color: var(--secondary-color);
+}
+
+.paragraphLargeBold {
+    font-family: var(--font-family-paragraph-bold);
+    font-size: var(--font-size-paragraph-lg);
     color: var(--secondary-color);
 }
 
@@ -264,6 +284,21 @@ button {
     overflow: hidden;
 }
 
+#column-1 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px 1fr 1fr;
+}
+
+#column-2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px 1fr 1fr;
+}
+
+#column-3 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px 1fr 1fr;
+}
+
 #noGradient {
     background: var(--background-color)
 }
@@ -296,6 +331,14 @@ button {
     background-position: 0%;
 }
 
+/* .three-rows {
+    grid-template-rows: 0.8fr 1.1fr 1.1fr;
+}
+
+.two-rows {
+    grid-template-rows: 0.2fr 0.8fr;
+} */
+
 #item1 {
     grid-row: 2;
     grid-column: 1;
@@ -325,7 +368,7 @@ button {
 
 .hidden {
     position: relative;
-    left: -1000px;
+    left: -75vw;
     transition: var(--transition-duration);
     transition-timing-function: var(--transition-function);
 }
@@ -356,7 +399,9 @@ button {
 #contacts {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column: 1;
     grid-row: 3;
+    z-index: 2;
     overflow: hidden;
     padding-top: var(--spacing-4x);
 }
@@ -373,4 +418,32 @@ button {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-3x);
+}
+
+#about-me {
+    grid-row: 2 / -1;
+    grid-column: 1;
+    z-index: 4;
+    margin-right: var(--spacing-8x);
+}
+
+#experience {
+    grid-row: 2;
+    grid-column: 1;
+    z-index: 1;
+    margin-right: var(--spacing-8x);
+}
+
+#education {
+    grid-area: -3 / -2;
+    z-index: 3;
+    margin-right: var(--spacing-8x);
+}
+
+.nameYear {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-2x);
+    margin-top: var(--spacing-5x);
 }

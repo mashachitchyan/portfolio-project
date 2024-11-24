@@ -9,11 +9,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const item1 = document.querySelector('.item-1');
     const item2 = document.querySelector('.item-2');
     const accentText = document.getElementById('accentText');
-    const contactLinks = document.getElementById ('contactLinks');
+    const contactLinks = document.getElementById('contactLinks');
     const contactInfo = document.getElementById('contactInfo');
+    const aboutMe = document.getElementById('about-me');
+    const experience = document.getElementById('experience');
+    const education = document.getElementById('education');
 
     item1.classList.add('visible');
     item1.classList.remove('hidden');
+    item2.classList.add('hidden');
+    item2.classList.remove('visible');
+    accentText.classList.add('hidden');
+    accentText.classList.remove('visible');
+    contactLinks.classList.add('hiddenTop');
+    contactLinks.classList.remove('visibleTop');
+    contactInfo.classList.add('hiddenTop');
+    contactInfo.classList.remove('visibleTopLate');
+    aboutMe.classList.add('hidden');
+    aboutMe.classList.remove('visible');
+    experience.classList.add('hidden');
+    experience.classList.remove('visible');
+    education.classList.add('hidden');
+    education.classList.remove('visible');
+
+
 
     homeButton.addEventListener('click', () => {
         content.classList.remove('four-columns');
@@ -29,6 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
         contactLinks.classList.remove('visibleTop');
         contactInfo.classList.add('hiddenTop');
         contactInfo.classList.remove('visibleTopLate');
+        aboutMe.classList.add('hidden');
+        aboutMe.classList.remove('visible');
+        experience.classList.add('hidden');
+        experience.classList.remove('visible');
+        education.classList.add('hidden');
+        education.classList.remove('visible');
     });
 
     projectsButton.addEventListener('click', () => {
@@ -45,6 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
         contactLinks.classList.remove('visibleTop');
         contactInfo.classList.add('hiddenTop');
         contactInfo.classList.remove('visibleTopLate');
+        aboutMe.classList.add('hidden');
+        aboutMe.classList.remove('visible');
+        experience.classList.add('hidden');
+        experience.classList.remove('visible');
+        education.classList.add('hidden');
+        education.classList.remove('visible');
     });
 
     resumeButton.addEventListener('click', () => {
@@ -61,6 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
         contactLinks.classList.remove('visibleTop');
         contactInfo.classList.add('hiddenTop');
         contactInfo.classList.remove('visibleTopLate');
+        aboutMe.classList.remove('hidden');
+        aboutMe.classList.add('visible');
+        experience.classList.remove('hidden');
+        experience.classList.add('visible');
+        education.classList.remove('hidden');
+        education.classList.add('visible');
     });
 
     contactsButton.addEventListener('click', () => {
@@ -77,6 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
         contactLinks.classList.remove('hiddenTop');
         contactInfo.classList.add('visibleTopLate');
         contactInfo.classList.remove('hiddenTop');
+        aboutMe.classList.add('hidden');
+        aboutMe.classList.remove('visible');
+        experience.classList.add('hidden');
+        experience.classList.remove('visible');
+        education.classList.add('hidden');
+        education.classList.remove('visible');
     })
 });
 
@@ -88,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     navItems[0].classList.add('selected');
 
-    
+
     navItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             navItems.forEach(btn => {
