@@ -487,7 +487,6 @@ button {
 
 #download-button {
     width: 100%;
-    grid-row: 3;
     margin-top: var(--spacing-8x);
 }
 
