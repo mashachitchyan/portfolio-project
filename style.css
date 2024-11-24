@@ -114,6 +114,11 @@ body {
 }
 
 .primaryButton {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-2x);
+    justify-content: center;
+    align-items: center;
     border: 1px solid var(--secondary-color);
     font-family: var(--font-family-button);
     font-size: var(--font-size-button);
@@ -123,6 +128,7 @@ body {
     padding: var(--spacing-2x) var(--spacing-4x);
     border-radius: var(--border-radius-sm);
     width: fit-content;
+    height: fit-content;
     transition: var(--transition-duration);
 }
 
@@ -424,7 +430,7 @@ button {
     grid-row: 2 / -1;
     grid-column: 1;
     z-index: 4;
-    margin-right: var(--spacing-8x);
+    padding-right: var(--spacing-8x);
 }
 
 #experience {
@@ -447,3 +453,41 @@ button {
     margin-bottom: var(--spacing-2x);
     margin-top: var(--spacing-5x);
 }
+
+.skills {
+    margin-top: var(--spacing-8x);
+}
+
+.skillTags {
+    margin-top: var(--spacing-5x);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing-2x);
+}
+
+.skillTag {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-4x);
+    width: fit-content;
+    height: fit-content;
+    align-content: baseline;
+    position: relative;
+    text-decoration: none;
+    border: 1px solid var(--secondary-transparent-30);
+    font-family: var(--font-family-button);
+    font-size: var(--font-size-button);
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    padding: var(--spacing-2x) var(--spacing-4x);
+    width: fit-content;
+    border-radius: var(--border-radius-sm);
+}
+
+#download-button {
+    width: 100%;
+    grid-row: 3;
+    margin-top: var(--spacing-8x);
+}
+
