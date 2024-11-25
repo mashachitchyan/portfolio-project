@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resumeButton = document.getElementById('resumeButton');
     const contactsButton = document.getElementById('contactsButton');
     const summary = document.querySelector('.summary');
+    const featured = document.getElementById('featured');
     const item2 = document.querySelector('.item-2');
     const accentText = document.getElementById('accentText');
     const contactLinks = document.getElementById('contactLinks');
@@ -14,9 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutMe = document.getElementById('about-me');
     const experience = document.getElementById('experience');
     const education = document.getElementById('education');
+    const allProjectsButton = document.getElementById('all-projects-button')
 
     summary.classList.add('visible');
     summary.classList.remove('hidden');
+    featured.classList.add('visible');
+    featured.classList.remove('hidden');
     item2.classList.add('hidden');
     item2.classList.remove('visible');
     accentText.classList.add('hidden');
@@ -32,14 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
     education.classList.add('hidden');
     education.classList.remove('visible');
 
-
-
     homeButton.addEventListener('click', () => {
         content.classList.remove('four-columns');
         content.classList.remove('two-columns');
         content.classList.add('three-columns');
         summary.classList.add('visible');
         summary.classList.remove('hidden');
+        featured.classList.add('visible');
+        featured.classList.remove('hidden');
         item2.classList.add('hidden');
         item2.classList.remove('visible');
         accentText.classList.add('hidden');
@@ -62,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.add('two-columns');
         summary.classList.add('hidden');
         summary.classList.remove('visible');
+        featured.classList.remove('visible');
+        featured.classList.add('hidden');
         item2.classList.add('visible');
         item2.classList.remove('hidden');
         accentText.classList.add('hidden');
@@ -84,6 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.add('four-columns');
         summary.classList.add('hidden');
         summary.classList.remove('visible');
+        featured.classList.remove('visible');
+        featured.classList.add('hidden');
         item2.classList.add('hidden');
         item2.classList.remove('visible');
         accentText.classList.add('hidden');
@@ -106,6 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.add('two-columns');
         summary.classList.add('hidden');
         summary.classList.remove('visible');
+        featured.classList.remove('visible');
+        featured.classList.add('hidden');
         item2.classList.add('hidden');
         item2.classList.remove('visible');
         accentText.classList.add('visible');
@@ -120,7 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
         experience.classList.remove('visible');
         education.classList.add('hidden');
         education.classList.remove('visible');
+    });
+
+    allProjectsButton.addEventListener('click', () => {
+        projectsButton.click();
     })
+
 });
 
 
