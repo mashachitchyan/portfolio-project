@@ -612,12 +612,12 @@ button {
         /* border-radius */
         --border-radius-sm: 6px;
         /* typography */
-        --font-size-heading-lg: 2rem;
-        --font-size-heading-md: 1.75rem;
-        --font-size-paragraph: 0.9rem;
-        --font-size-paragraph-lg: 1rem;
+        --font-size-heading-lg: 1.5rem;
+        --font-size-heading-md: 1.25rem;
+        --font-size-paragraph: 1rem;
+        --font-size-paragraph-lg: 1.1rem;
         --font-size-button: 1.15rem;
-        --font-size-accent: 10rem;
+        --font-size-accent: 7rem;
         --font-family-heading: "Antonio-Regular.ttf";
         --font-family-paragraph: "Inconsolata_Condensed-Regular.ttf";
         --font-family-button: "Inconsolata_Condensed-Semibold.ttf";
@@ -669,7 +669,7 @@ button {
         font-family: var(--font-family-paragraph);
         font-size: var(--font-size-paragraph-lg);
         color: var(--secondary-color);
-        padding-top: var(--spacing-4x);
+        padding-top: var(--spacing-2x);
     }
     
     .paragraphBold {
@@ -818,6 +818,9 @@ button {
         transition: grid-template-rows var(--transition-duration) var(--transition-function);
         overflow: hidden;
         position: relative;
+        grid-gap: 0;
+        margin: 0;
+        padding: 0;
     }
     
     .content .column {
@@ -858,15 +861,15 @@ button {
     }
     
     .three-columns {
-        grid-template-rows: 90px auto auto 0fr;
+        grid-template-rows: 64px auto auto 0fr;
     }
     
     .four-columns {
-        grid-template-rows: 90px auto auto auto;
+        grid-template-rows: 64px auto auto auto;
     }
     
     .two-columns {
-        grid-template-rows: 90px auto 0fr 0fr;
+        grid-template-rows: 64px auto 0fr 0fr;
     }
 
     .three-columns .column {
@@ -879,25 +882,22 @@ button {
 
     #column-1 {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
+        grid-template-rows: auto;
         grid-row: 2;
-        height: fit-content;
-        max-width: 100vw;
+        width: 100%;
         overflow: hidden;
     }
     
     #column-2 {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
+        grid-template-rows: auto;
         grid-row: 3;
-        height: fit-content;
     }
     
     #column-3 {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
+        grid-template-rows: auto;
         grid-row: 4;
-        height: fit-content;
     }
 
     .visible {
@@ -929,7 +929,7 @@ button {
         grid-row: 1;
         grid-column: 1;
         z-index: 2;
-        padding: var(--spacing-4x);
+        padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-4x) var(--spacing-2x);
         max-width: 100vw;
         position: relative;
         height: fit-content;
@@ -947,7 +947,7 @@ button {
         background-size: 400% 400%;
         margin-top: var(--spacing-4x);
         animation: gradient 15s ease infinite;
-        max-height: 35vh;
+        max-height: 30vh;
         max-width: 100%;
     }
 
@@ -955,7 +955,7 @@ button {
         grid-row: 1;
         grid-column: 1;
         z-index: 1;
-        padding: var(--spacing-4x);
+        padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-4x) var(--spacing-2x);
     }
 
     #contacts {
@@ -965,15 +965,14 @@ button {
         grid-row: 1;
         z-index: 2;
         overflow: hidden;
-        padding-top: var(--spacing-4x);
-        padding: var(--spacing-4x);
+        padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-4x) var(--spacing-2x);
     }
 
     #item2 {
         grid-row: 1;
         grid-column: 1;
         z-index: 2;
-        padding: var(--spacing-4x);
+        padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-4x) var(--spacing-2x);
     }
     
     #accentText {
@@ -981,12 +980,31 @@ button {
         grid-column: 1;
         z-index: 3;
         align-content: end;
-        padding: var(--spacing-4x);
+        padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-4x) var(--spacing-2x);
     }
     
     #about-me {
         grid-row: 1;
         grid-column: 1;
         z-index: 4;
+    }
+
+    .projectDescription {
+        display: flex;
+        flex-direction: row;
+        gap: var(--spacing-1x);
+        justify-content: space-between;
+        width: 100%;
+        align-items: baseline;
+        margin-top: 0px;
+    }
+
+    #all-projects-button {
+        display: visible;
+        margin-top: var(--spacing-4x);
+    }
+
+    .allProjects {
+        padding-right: var(--spacing-1x);
     }
 }
