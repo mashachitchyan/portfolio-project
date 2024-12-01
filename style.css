@@ -347,7 +347,7 @@ button {
     grid-row: 2;
     grid-column: 1;
     z-index: 2;
-    margin-right: var(--spacing-26x);
+    padding-right: var(--spacing-26x);
 }
 
 #featured {
@@ -380,6 +380,7 @@ button {
     transition: var(--transition-duration);
     transition-delay: var(--transition-delay);
     transition-timing-function: var(--transition-function);
+
 }
 
 .hidden {
@@ -387,6 +388,9 @@ button {
     left: -1000px;
     transition: var(--transition-duration);
     transition-timing-function: var(--transition-function);
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
 }
 
 .visibleTop {
@@ -410,6 +414,9 @@ button {
     top: -300px;
     transition: var(--transition-duration);
     transition-timing-function: var(--transition-function);
+    visibility: hidden;
+    height: 0px;
+    width: 10%;
 }
 
 #contacts {
@@ -447,21 +454,21 @@ button {
     grid-row: 2;
     grid-column: 1;
     z-index: 1;
-    margin-right: var(--spacing-8x);
+    padding-right: var(--spacing-8x);
 }
 
 #education {
     grid-area: -3 / -2;
     z-index: 3;
-    margin-right: var(--spacing-8x);
+    padding-right: var(--spacing-8x);
 }
 
 .nameYear {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: var(--spacing-2x);
-    margin-top: var(--spacing-5x);
+    padding-bottom: var(--spacing-2x);
+    padding-top: var(--spacing-5x);
 }
 
 .projectDescription {
@@ -527,13 +534,12 @@ button {
 }
 
 .summary .gradient {
-    width: 100%;
+    max-width: 100%;
     height: 88px;
 }
 
 .featured .gradient {
     width: 100%;
-    /* height: 32%; */
     overflow: hidden;
 }
 
@@ -876,6 +882,8 @@ button {
         grid-template-rows: 1fr;
         grid-row: 2;
         height: fit-content;
+        max-width: 100vw;
+        overflow: hidden;
     }
     
     #column-2 {
@@ -901,6 +909,8 @@ button {
         transition-timing-function: var(--transition-function);
         height: fit-content;
         width: fit-content;
+        visibility: visible;
+        opacity: 100%;
     }
     
     .hidden {
@@ -910,22 +920,42 @@ button {
         transition: var(--transition-duration);
         transition-timing-function: var(--transition-function);
         height: 0px;
-        width: fit-content;
+        width: 90vw;
+        visibility: hidden;
+        opacity: 0%;
     }
 
     #summary {
         grid-row: 1;
         grid-column: 1;
         z-index: 2;
-        margin: var(--spacing-4x);
+        padding: var(--spacing-4x);
+        max-width: 100vw;
         position: relative;
         height: fit-content;
+        margin-right: 0;
+    }
+
+    .summary .gradient {
+        max-width: 100%;
+        height: 78px;
+        overflow: hidden;
+    }
+
+    .gradient {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        margin-top: var(--spacing-4x);
+        animation: gradient 15s ease infinite;
+        max-height: 35vh;
+        max-width: 100%;
     }
 
     #featured {
         grid-row: 1;
         grid-column: 1;
         z-index: 1;
+        padding: var(--spacing-4x);
     }
 
     #contacts {
@@ -936,12 +966,14 @@ button {
         z-index: 2;
         overflow: hidden;
         padding-top: var(--spacing-4x);
+        padding: var(--spacing-4x);
     }
 
     #item2 {
         grid-row: 1;
         grid-column: 1;
         z-index: 2;
+        padding: var(--spacing-4x);
     }
     
     #accentText {
@@ -949,12 +981,12 @@ button {
         grid-column: 1;
         z-index: 3;
         align-content: end;
+        padding: var(--spacing-4x);
     }
     
     #about-me {
         grid-row: 1;
         grid-column: 1;
         z-index: 4;
-        padding-right: var(--spacing-8x);
     }
 }
