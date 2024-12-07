@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactsButton = document.getElementById('contactsButton');
     const summary = document.querySelector('.summary');
     const featured = document.getElementById('featured');
-    const item2 = document.querySelector('.item-2');
+    const projects = document.querySelector('.projects');
     const accentText = document.getElementById('accentText');
     const contactLinks = document.getElementById('contactLinks');
     const contactInfo = document.getElementById('contactInfo');
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     summary.classList.remove('hidden');
     featured.classList.add('visible');
     featured.classList.remove('hidden');
-    item2.classList.add('hidden');
-    item2.classList.remove('visible');
+    projects.classList.add('hidden');
+    projects.classList.remove('visible');
     accentText.classList.add('hidden');
     accentText.classList.remove('visible');
     contactLinks.classList.add('hiddenTop');
@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
         summary.classList.remove('hidden');
         featured.classList.add('visible');
         featured.classList.remove('hidden');
-        item2.classList.add('hidden');
-        item2.classList.remove('visible');
+        projects.classList.add('hidden');
+        projects.classList.remove('visible');
         accentText.classList.add('hidden');
         accentText.classList.remove('visible');
         contactLinks.classList.add('hiddenTop');
@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
         summary.classList.remove('visible');
         featured.classList.remove('visible');
         featured.classList.add('hidden');
-        item2.classList.add('visible');
-        item2.classList.remove('hidden');
+        projects.classList.add('visible');
+        projects.classList.remove('hidden');
         accentText.classList.add('hidden');
         accentText.classList.remove('visible');
         contactLinks.classList.add('hiddenTop');
@@ -92,8 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
         summary.classList.remove('visible');
         featured.classList.remove('visible');
         featured.classList.add('hidden');
-        item2.classList.add('hidden');
-        item2.classList.remove('visible');
+        projects.classList.add('hidden');
+        projects.classList.remove('visible');
         accentText.classList.add('hidden');
         accentText.classList.remove('visible');
         contactLinks.classList.add('hiddenTop');
@@ -116,8 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
         summary.classList.remove('visible');
         featured.classList.remove('visible');
         featured.classList.add('hidden');
-        item2.classList.add('hidden');
-        item2.classList.remove('visible');
+        projects.classList.add('hidden');
+        projects.classList.remove('visible');
         accentText.classList.add('visible');
         accentText.classList.remove('hidden');
         contactLinks.classList.add('visibleTop');
@@ -203,6 +203,48 @@ document.addEventListener("DOMContentLoaded", function () {
         modeSwitcher.classList.toggle("rotated");
     });
 });
+
+
+// Projects slider 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".slide");
+    const pagination = document.getElementById("pagination");
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+
+    let currentPage = 0;
+
+    function updateSlider() {
+
+        slides.forEach((slide, index) => {
+            slide.classList.toggle("active", index === currentPage);
+        });
+
+
+        pagination.innerHTML = "";
+        slides.forEach((_, index) => {
+            if (index === currentPage) {
+                pagination.innerHTML += `<span>${String(index + 1).padStart(3, "0")}</span>`;
+            } else {
+                pagination.innerHTML += `<span>•</span>`;
+            }
+        });
+    }
+
+    prevButton.addEventListener("click", () => {
+        currentPage = (currentPage - 1 + slides.length) % slides.length;
+        updateSlider();
+    });
+
+    nextButton.addEventListener("click", () => {
+        currentPage = (currentPage + 1) % slides.length;
+        updateSlider();
+    });
+
+    updateSlider();
+});
+
 
 
 

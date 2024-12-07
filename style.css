@@ -361,7 +361,7 @@ button {
     width: 100%;
 }
 
-#item2 {
+#projects {
     grid-row: 2;
     grid-column: 1;
     z-index: 2;
@@ -530,7 +530,6 @@ button {
     background-size: 400% 400%;
     margin-top: var(--spacing-8x);
     animation: gradient 15s ease infinite;
-    max-height: 35vh;
 }
 
 .summary .gradient {
@@ -541,11 +540,88 @@ button {
 .featured .gradient {
     width: 100%;
     overflow: hidden;
+    max-height: 35vh;
 }
 
 .mobile {
     display: none;
 }
+
+/* Slider test */
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: var(--spacing-4x) var(--spacing-6x);
+}
+
+.pagination {
+    font-family: var(--font-family-button);
+    font-size: var(--font-size-button);
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 var(--spacing-2x) 0 var(--spacing-2x);
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4x);
+    position: relative;
+    height: auto;
+}
+
+.slide {
+    display: none;
+    max-width: 100%;
+}
+
+.slide .gradient {
+    margin-top: var(--spacing-4x);
+    height: 100%;
+}
+
+.slide .gradient img {
+    max-height: 45vh;
+    object-fit: cover;
+}
+
+.slide .skillTags {
+    max-width: 70%;
+    margin: 0;
+}
+
+.slide.active {
+    display: block;
+}
+
+.project-more {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--spacing-5x);
+    gap: var(--spacing-5x);
+    padding-right: var(--spacing-5x);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: var(--spacing-6x);
+    margin-right: var(--spacing-5x);
+}
+
+.buttons .primaryButton {
+    width: 100%;
+}
+
+/* Slider test end */
 
 @keyframes gradient {
     0% {
