@@ -383,6 +383,14 @@ button {
 
 }
 
+.hiddenStatic {
+    opacity: 0;
+}
+
+.visibleStatic {
+    opacity: 1;
+}
+
 .hidden {
     position: relative;
     left: -1000px;
@@ -480,6 +488,12 @@ button {
     gap: var(--spacing-14x);
 }
 
+/* .projectSummary {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8x);
+} */
+
 .skills {
     margin-top: var(--spacing-8x);
 }
@@ -547,14 +561,23 @@ button {
     display: none;
 }
 
-/* Slider test */
+/* Slider */
+
+.sliderContainer {
+    padding: var(--spacing-4x) var(--spacing-6x);
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: var(--spacing-10x);
+    max-height: 50%;
+}
 
 .slider {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    padding: var(--spacing-4x) var(--spacing-6x);
 }
 
 .pagination {
@@ -591,6 +614,15 @@ button {
     object-fit: cover;
 }
 
+.slide .noGradient img {
+    max-height: 45vh;
+    object-fit: cover;
+    width: 100%;
+    object-position: 0 35%;
+}
+
+
+
 .slide .skillTags {
     max-width: 70%;
     margin: 0;
@@ -621,7 +653,7 @@ button {
     width: 100%;
 }
 
-/* Slider test end */
+/* Slider end */
 
 @keyframes gradient {
     0% {

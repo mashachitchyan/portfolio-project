@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutMe = document.getElementById('about-me');
     const experience = document.getElementById('experience');
     const education = document.getElementById('education');
-    const allProjectsButton = document.getElementById('all-projects-button')
+    const allProjectsButton = document.getElementById('all-projects-button');
+    const slider = document.getElementById('sliderContainer')
 
     summary.classList.add('visible');
     summary.classList.remove('hidden');
@@ -35,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     experience.classList.remove('visible');
     education.classList.add('hidden');
     education.classList.remove('visible');
+    slider.classList.add('hiddenStatic');
+    slider.classList.remove('visibleStatic');
 
     homeButton.addEventListener('click', () => {
         content.classList.remove('four-columns');
@@ -57,7 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
         experience.classList.add('hidden');
         experience.classList.remove('visible');
         education.classList.add('hidden');
-        education.classList.remove('visible');
+        education.classList.remove('visibleStatic');
+        slider.classList.add('hiddenStatic')
+        slider.classList.remove('visibleStatic')
     });
 
     projectsButton.addEventListener('click', () => {
@@ -82,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
         experience.classList.remove('visible');
         education.classList.add('hidden');
         education.classList.remove('visible');
+        slider.classList.remove('hiddenStatic')
+        slider.classList.add('visibleStatic')
     });
 
     resumeButton.addEventListener('click', () => {
