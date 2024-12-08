@@ -113,6 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
         experience.classList.add('visible');
         education.classList.remove('hidden');
         education.classList.add('visible');
+        slider.classList.add('hiddenStatic')
+        slider.classList.remove('visibleStatic')
     });
 
     contactsButton.addEventListener('click', () => {
@@ -137,6 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
         experience.classList.remove('visible');
         education.classList.add('hidden');
         education.classList.remove('visible');
+        slider.classList.add('hiddenStatic')
+        slider.classList.remove('visibleStatic')
     });
 
     allProjectsButton.addEventListener('click', () => {
@@ -219,6 +223,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const pagination = document.getElementById("pagination");
     const prevButton = document.getElementById("prev");
     const nextButton = document.getElementById("next");
+    const projectSummary = document.getElementById("project-summary");
+    const projectYear = document.getElementById("project-year");
 
     let currentPage = 0;
 
@@ -228,7 +234,6 @@ document.addEventListener("DOMContentLoaded", () => {
             slide.classList.toggle("active", index === currentPage);
         });
 
-
         pagination.innerHTML = "";
         slides.forEach((_, index) => {
             if (index === currentPage) {
@@ -237,6 +242,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 pagination.innerHTML += `<span>•</span>`;
             }
         });
+
+        const projectSummaries = [
+            "Insurance company website redesign with a focus on improving customer experience. The project involved creating intuitive navigation, optimizing mobile responsiveness, and enhancing the visual layout to align with the company's brand identity.",
+            "A user-friendly finance tracking app designed to empower individuals and businesses to effectively manage their finances. The visually appealing interface simplifies financial management, while providing insightful analytics and personalized recommendations.",
+        ];
+
+        projectSummary.textContent = projectSummaries[currentPage]; 
     }
 
     prevButton.addEventListener("click", () => {
@@ -250,6 +262,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     updateSlider();
+});
+
+
+// Projects overlay
+
+document.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById("overlay");
+    const overlayFrame = document.getElementById("overlayFrame");
+    const closeOverlay = document.getElementById("closeOverlay");
+    const openOverlay1 = document.getElementById("openOverlay1");
+    const openOverlay2 = document.getElementById("openOverlay2");
+
+    openOverlay1.addEventListener("click", () => {
+        overlay.style.display = "flex";
+        overlayFrame.src = "Ingo_Insurance.html"; 
+        closeOverlay.style.display = "none"; 
+    });
+
+    openOverlay2.addEventListener("click", () => {
+        overlay.style.display = "flex";
+        overlayFrame.src = "Finance_app.html";
+        closeOverlay.style.display = "none"; 
+    });
+
+    closeOverlay.addEventListener("click", () => {
+        overlay.style.display = "none";
+        overlayFrame.src = ""; 
+    });
 });
 
 

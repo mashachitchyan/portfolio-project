@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingo Insurance</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+<aside class="aside">
+    <button id="closeOverlayFromIframe" class="primaryButton">Close Overlay</button>
+</aside>
+<main>
+
+</main>
+   
+
+    <script>
+        document.getElementById("closeOverlayFromIframe").addEventListener("click", () => {
+            window.parent.document.getElementById("closeOverlay").click();
+        });
+    </script>
+</body>
+</html>

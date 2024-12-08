@@ -3,31 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masha Chitchyan | Portfolio</title>
+    <title>Document</title>
     <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
-    <div class="main_mobile">
-        <div class="header">
-            <img class="logo" src="./images/logo.svg" alt="logo">
-            <div class="menu">
-                <div class="line" id="line-1"></div>
-                <div class="line" id="line-2"></div>
-            </div>
+    <main>
+        Hello!
+        <button id="openOverlay1">Open Overlay 1</button>
+        <button id="openOverlay2">Open Overlay 2</button>
+    </main>
+
+    <div id="overlay" class="overlay">
+        <div id="overlayContent" class="overlay-content">
+            <iframe id="overlayFrame" src="" frameborder="0" width="100%" height="100%"></iframe>
+            <button id="closeOverlay" class="close-button">Close</button>
         </div>
-        <div class="about_me">
-        </div>
-        <div class="featured">
-        </div>
-        <div class="projects">
-        </div>
-        <div class="summary">
-        </div>
-        <div class="experience">
-        </div>
-        <div class="education">
-        </div>
-        <div class="contacts"></div>
     </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const overlay = document.getElementById("overlay");
+            const overlayFrame = document.getElementById("overlayFrame");
+            const closeOverlay = document.getElementById("closeOverlay");
+            const openOverlay1 = document.getElementById("openOverlay1");
+            const openOverlay2 = document.getElementById("openOverlay2");
+
+            // Open Overlay 1
+            openOverlay1.addEventListener("click", () => {
+                overlay.style.display = "flex";
+                overlayFrame.src = "overlay1.html"; // Change this to your actual file
+            });
+
+            // Open Overlay 2
+            openOverlay2.addEventListener("click", () => {
+                overlay.style.display = "flex";
+                overlayFrame.src = "overlay2.html"; // Change this to your actual file
+            });
+
+            // Close the overlay when the close button is clicked
+            closeOverlay.addEventListener("click", () => {
+                overlay.style.display = "none";
+                overlayFrame.src = ""; // Reset the iframe
+            });
+        });
+    </script>
 </body>
 </html>
