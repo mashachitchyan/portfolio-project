@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overlay 1</title>
+    <title>Ingo Insurance</title>
+    <link rel="stylesheet" href="projects.css">
 </head>
 <body>
-    <h1>Overlay 1 Content</h1>
-    <p>This is some content for Overlay 1.</p>
-    <button id="closeOverlayFromIframe">Close Overlay</button>
+<aside class="aside">
+    <button id="closeOverlayFromIframe" class="primaryButton"><img src="./images/Arrow left.svg" alt="Arrow left">Back to projects</button>
+    <div>
+        <h2 class="heading-lg">INGO Insurance</h2>
+        <p class="paragraph">In this comprehensive redesign, my goal was to enhance both the functionality and aesthetic of the insurance company's website, transforming it into a modern, user-centric digital platform. The project spanned several areas, from creating a streamlined product page to implementing a consistent design system and developing an intuitive personal cabinet. Each aspect of the redesign was aimed at improving the user experience, increasing engagement, and aligning the visual identity with the company's brand.</p>
+    </div>
+   
+</aside>
+<main>
+
+</main>
+   
 
     <script>
-        // Simulate a click on the close button in the parent page
         document.getElementById("closeOverlayFromIframe").addEventListener("click", () => {
             window.parent.document.getElementById("closeOverlay").click();
         });

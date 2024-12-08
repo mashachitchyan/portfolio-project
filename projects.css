@@ -66,10 +66,16 @@
     position: fixed;
     left: 0px;
     width: 300px;
-    height: 90vh;
+    height: 92vh;
     border: 1px solid black;
     margin: var(--spacing-8x) 0;
     background-color: var(--background-color);
+    border-top-right-radius: var(--spacing-2x);
+    border-bottom-right-radius: var(--spacing-2x);
+    padding: var(--spacing-8x);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    box-sizing: border-box;
 }
 
 button {
@@ -104,4 +110,75 @@ body {
     background-color: var(--secondary-color);
     margin: 0;
     padding: 0;
+    overflow: hidden scroll;
 }
+
+.main {
+    width: calc(100% - 364px);
+    position: absolute;
+    right: 0px;
+    padding-right: var(--spacing-8x);
+    padding-top: var(--spacing-8x);
+}
+
+.heading-lg {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-lg);
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+.heading-md {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-md);
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+.heading-sm {
+    font-family: var(--font-family-heading);
+    font-size: var(--spacing-6x);
+    color: var(--background-color);
+    margin: 0;
+    padding-bottom: var(--spacing-2x);
+}
+
+.paragraphLargeBold {
+    font-family: var(--font-family-paragraph-bold);
+    font-size: var(--font-size-paragraph-lg);
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+}
+
+.paragraph {
+    font-family: var(--font-family-paragraph);
+    font-size: var(--font-size-paragraph);
+    color: var(--secondary-color);
+}
+
+.projectImages {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4x);
+}
+
+.projectImages .heading-md {
+    color: var(--background-color);
+    margin: 0;
+}
+
+.projectImage {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    border-radius: var(--spacing-2x);
+    margin-bottom: var(--spacing-4x);
+}
+
+.gif-background {
+    width: 100%;
+    height: 70vh;
+    background-color: #474742;
+}
+
